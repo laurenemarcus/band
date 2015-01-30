@@ -1,0 +1,30 @@
+<h1>Bands and Venues</h1>
+
+<p><a href="/bands">Add bands</a></p>
+<p><a href="/venues">Add venues</a></p>
+
+<h3>Bands:</h3>
+
+<% if @bands.any?() %>
+  <p>Click on a band to see the band's venue list and add venues to the list</p>
+  <ul>
+    <% @bands.alphabetical().each do |band| %>
+      <li><a href="/bands/<%= band.id() %>"><%= band.band() %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No bands added</p>
+<% end %>
+
+<h3>Venues:</h3>
+
+<% if @venues.any?() %>
+<p>Click on a venue to see a list of bands that have played at that venue and to add bands to the list</p>
+  <ul>
+    <% @venues.alphabetical().each do |venue| %>
+    <li><a href="/venues/<%= venue.id() %>"><%= venue.venue() %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No venues added</p>
+<% end %>
