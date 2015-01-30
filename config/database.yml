@@ -1,7 +1,9 @@
 development:
   adapter: postgresql
   database: band_development
+  template: template0
 
 test:
   adapter: postgresql
   database: band_test
+  template: template0
